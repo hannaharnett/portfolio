@@ -59,20 +59,21 @@ class Navbar extends Component {
     this.setState({ style, isToggleOn: !this.state.isToggleOn });
   }
   render() {
+    const { isToggleOn } = this.state;
     return (
       <div>
         <Nav>
           <h4>
             <Link
               to="/"
-              isToggleOn={this.state.isToggleOn}
-              onClick={this.closeNav}
+              isToggleOn={isToggleOn}
+              onClick={isToggleOn ? this.closeNav : ""}
             >
               hannaharnett
             </Link>
           </h4>
           <NavIcon
-            isToggleOn={this.state.isToggleOn}
+            isToggleOn={isToggleOn}
             openNav={this.openNav}
             closeNav={this.closeNav}
           />
