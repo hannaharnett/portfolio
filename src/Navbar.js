@@ -58,7 +58,6 @@ class Navbar extends Component {
     const style = { width: 0, transition: "" };
     this.setState({ style, isToggleOn: !this.state.isToggleOn });
   }
-  removeNav() {}
   render() {
     return (
       <div>
@@ -67,7 +66,7 @@ class Navbar extends Component {
             <Link
               to="/"
               isToggleOn={this.state.isToggleOn}
-              closeNav={this.closeNav}
+              onClick={this.closeNav}
             >
               hannaharnett
             </Link>
@@ -80,7 +79,7 @@ class Navbar extends Component {
         </Nav>
         <Overlay ref="snav" style={this.state.style}>
           <div>
-            <Menu clickMenu={this.clickMenu} />
+            <Menu clickMenu={this.clickMenu} onClick={this.closeNav} />
           </div>
         </Overlay>
       </div>

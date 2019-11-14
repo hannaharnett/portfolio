@@ -40,7 +40,7 @@ const MenuContainer = styled.section`
 class Menu extends Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper onClick={this.props.onClick}>
         <MenuContainer>
           <ul>
             <li onClick={this.props.clickMenu}>
