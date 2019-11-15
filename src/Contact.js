@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import ContactIllustration from "./kingdom-1.png";
 import ExternalLink from "./ExternalLink";
+import Footer from "./Footer";
 
 const Wrapper = styled.main`
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   & img {
     width: 500px;
     align-self: center;
@@ -35,25 +36,30 @@ const Div = styled.section`
 class Contact extends Component {
   render() {
     return (
-      <Wrapper>
-        <Div>
-          <h1>I'm ready when you are.</h1>
-          <ExternalLink
-            link="https://www.linkedin.com/in/hannah-arnett/"
-            name="LinkedIn"
-          />
-          {"  //  "}
-          <ExternalLink link="https://github.com/hannaharnett" name="Github" />
-          {"  //  "}
-          <ExternalLink link="https://codepen.io/hannaharnett" name="Codepen" />
-          <p>hannahtesaker@gmail.com</p>
-          <ExternalLink
-            link="https://icons8.com"
-            name="Illustration by Ouch.pics"
-          />
-        </Div>
-        <img src={ContactIllustration} alt="illustration" />
-      </Wrapper>
+      <div>
+        <Wrapper>
+          <Div>
+            <h1>I'm ready when you are.</h1>
+            <ExternalLink
+              link="https://www.linkedin.com/in/hannah-arnett/"
+              name="LinkedIn"
+            />
+            {"  //  "}
+            <ExternalLink
+              link="https://github.com/hannaharnett"
+              name="Github"
+            />
+            {"  //  "}
+            <ExternalLink
+              link="https://codepen.io/hannaharnett"
+              name="Codepen"
+            />
+            <p>hannahtesaker@gmail.com</p>
+          </Div>
+          <img src={ContactIllustration} alt="illustration" />
+        </Wrapper>
+        <Footer />
+      </div>
     );
   }
 }
