@@ -22,8 +22,10 @@ const MenuContainer = styled.section`
     color: #2568ef;
     letter-spacing: 1px;
     line-height: 1.1;
-    // text-shadow: 0px 1px, 1px 0px, 1px 1px;
     max-width: 60%;
+  }
+  h1:hover {
+    color: #ee534c;
   }
   ,
   & a {
@@ -40,11 +42,11 @@ const MenuContainer = styled.section`
 class Menu extends Component {
   render() {
     return (
-      <Wrapper onClick={this.props.onClick}>
+      <Wrapper>
         <MenuContainer>
           <ul>
-            <li onClick={this.props.clickMenu}>
-              <Link to="/resume">
+            <li onClick="">
+              <Link to="/files/fakeResume.pdf" target="_blank" download>
                 <h1>
                   resume<span>PDF</span>
                 </h1>
