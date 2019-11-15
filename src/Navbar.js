@@ -80,7 +80,7 @@ class Navbar extends Component {
         </Nav>
         <Overlay ref="snav" style={this.state.style}>
           <div>
-            <Menu clickMenu={this.clickMenu} onClick={this.closeNav} />
+            <Menu clickMenu={this.clickMenu} />
           </div>
         </Overlay>
       </div>
