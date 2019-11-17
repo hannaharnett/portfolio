@@ -36,13 +36,13 @@ class Home extends Component {
           <Div>
             <h1>Hullo! I'm Hannah, Portland based web developer.</h1>
             <ExternalLink
-              link="https://github.com/hannaharnett"
-              name="Github"
+              link="https://www.linkedin.com/in/hannah-arnett/"
+              name="LinkedIn"
             />
             {"  //  "}
             <ExternalLink
-              link="https://www.linkedin.com/in/hannah-arnett/"
-              name="LinkedIn"
+              link="https://github.com/hannaharnett"
+              name="Github"
             />
           </Div>
           <img src={HomeIllustration} alt="illustration" />

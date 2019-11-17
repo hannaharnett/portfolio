@@ -43,7 +43,7 @@ class NotFoundPage extends Component {
           <img src={NotFoundPageIllustration} alt=" 404 illustration" />
           <Div>
             <h1>Hmm, that doesn't look good...</h1>
-            <Link to="/">Let's try again</Link>
+            <Link to="/">Let's try that again!</Link>
           </Div>
         </Wrapper>
         <Footer />

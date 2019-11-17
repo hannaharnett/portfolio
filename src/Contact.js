@@ -39,7 +39,8 @@ class Contact extends Component {
       <div>
         <Wrapper>
           <Div>
-            <h1>I'm ready when you are.</h1>
+            <h1>Alright, how do you take your coffee?</h1>
+            <p>hannahtesaker@gmail.com</p>
             <ExternalLink
               link="https://www.linkedin.com/in/hannah-arnett/"
               name="LinkedIn"
@@ -54,7 +55,6 @@ class Contact extends Component {
               link="https://codepen.io/hannaharnett"
               name="Codepen"
             />
-            <p>hannahtesaker@gmail.com</p>
           </Div>
           <img src={ContactIllustration} alt="illustration" />
         </Wrapper>
