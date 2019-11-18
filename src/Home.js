@@ -21,6 +21,13 @@ const Wrapper = styled.main`
       width: 100%;
       margin-right: 0;
     }
+  }
+  @media ${device.tablet} {
+    & img {
+      width: 50%;
+      margin-right: 0;
+    }
+  }
 `;
 const Div = styled.section`
   width: 650px;
@@ -44,6 +51,11 @@ const Div = styled.section`
     }
     & a {
       font-size: 1.2rem;
+    }
+  }
+  @media ${device.tablet} {
+    h1 {
+      font-size: 3rem;
     }
   }
 `;

@@ -37,8 +37,12 @@ const MenuContainer = styled.section`
     font-size: 1.1rem;
     color: black;
   }
-
   @media ${device.mobile} {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  @media ${device.tablet} {
     h1 {
       font-size: 3rem;
     }

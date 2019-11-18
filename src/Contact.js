@@ -21,6 +21,12 @@ const Wrapper = styled.main`
       width: 100%;
       margin-right: 0;
     }
+  }
+  @media ${device.tablet} {
+    & img {
+      width: 60%;
+    }
+  }
 `;
 
 const Div = styled.section`
@@ -51,6 +57,14 @@ const Div = styled.section`
     }
     & p {
       font-size: 1.4rem;
+    }
+  }
+  @media ${device.tablet} {
+    h1 {
+      font-size: 3rem;
+    }
+    a {
+      font-size: 1.2rem;
     }
   }
 `;
