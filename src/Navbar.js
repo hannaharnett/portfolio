@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "./Menu";
 import NavIcon from "./NavIcon";
+import { device } from "./device";
 
 const Nav = styled.div`
   display: flex;
@@ -18,6 +19,8 @@ const Nav = styled.div`
     text-decoration: none;
     color: black;
   }
+  @media ${device.mobile} {
+  }
 `;
 
 const Overlay = styled.div`
@@ -30,33 +33,39 @@ const Overlay = styled.div`
   & div {
     margin: 50px 80px;
   }
+  @media ${device.mobile} {
+    & div {
+      margin: 40px 50px;
+    }
+  }
 `;
+
+let OverlayStyle = {
+  width: 0,
+  transition: ""
+};
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isToggleOn: false,
-      style: {
-        width: 0,
-        transition: ""
-      }
+      isToggleOn: false
     };
     this.openNav = this.openNav.bind(this);
     this.closeNav = this.closeNav.bind(this);
     this.clickMenu = this.clickMenu.bind(this);
   }
   openNav() {
-    const style = { width: "100%", transition: "0.8s" };
-    this.setState({ style, isToggleOn: !this.state.isToggleOn });
+    OverlayStyle = { width: "100%", transition: "0.8s" };
+    this.setState({ isToggleOn: !this.state.isToggleOn });
   }
   closeNav() {
-    const style = { width: 0, transition: "0.8s" };
-    this.setState({ style, isToggleOn: !this.state.isToggleOn });
+    OverlayStyle = { width: 0, transition: "0.8s" };
+    this.setState({ isToggleOn: !this.state.isToggleOn });
   }
   clickMenu() {
-    const style = { width: 0, transition: "" };
-    this.setState({ style, isToggleOn: !this.state.isToggleOn });
+    OverlayStyle = { width: 0, transition: "" };
+    this.setState({ isToggleOn: !this.state.isToggleOn });
   }
   render() {
     const { isToggleOn } = this.state;
@@ -67,7 +76,7 @@ class Navbar extends Component {
             <Link
               to="/"
               isToggleOn={isToggleOn}
-              onClick={isToggleOn ? this.closeNav : ""}
+              onClick={isToggleOn ? this.clickMenu : ""}
             >
               hannaharnett
             </Link>
@@ -78,7 +87,7 @@ class Navbar extends Component {
             closeNav={this.closeNav}
           />
         </Nav>
-        <Overlay ref="snav" style={this.state.style}>
+        <Overlay ref="snav" style={OverlayStyle}>
           <div>
             <Menu clickMenu={this.clickMenu} />
           </div>

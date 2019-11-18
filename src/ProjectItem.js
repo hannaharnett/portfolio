@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import ExternalLink from "./ExternalLink";
+import { device } from "./device";
 
 const Wrapper = styled.main`
   display: flex;
   justify-content: space-between;
   margin: 20px 40px 20px 0;
   width: 30%;
+  @media ${device.mobile} {
+    width: 100%;
+  }
 `;
 
 const About = styled.section`
@@ -25,6 +29,12 @@ const About = styled.section`
   & p {
     font-size: 1.4rem;
     margin: 15px 0;
+  }
+  @media ${device.mobile} {
+    width: 100%;
+    h1 {
+      font-size: 2rem;
+    }
   }
 `;
 

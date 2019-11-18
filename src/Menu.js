@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { device } from "./device";
 
 const Wrapper = styled.main`
   height: 100vh;
@@ -35,7 +36,12 @@ const MenuContainer = styled.section`
   & span {
     font-size: 1.1rem;
     color: black;
-    // margin-left: 10px;
+  }
+
+  @media ${device.mobile} {
+    h1 {
+      font-size: 3rem;
+    }
   }
 `;
 

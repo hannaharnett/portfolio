@@ -5,10 +5,19 @@ import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import NotFoundPage from "./NotFoundPage";
+import styled from "styled-components";
+import { device } from "./device";
+
+const Wrapper = styled.main`
+  margin: 50px 80px;
+  @media ${device.mobile} {
+    margin: 40px 50px;
+  }
+`;
 
 function App() {
   return (
-    <div>
+    <Wrapper>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -16,7 +25,7 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
-    </div>
+    </Wrapper>
   );
 }
 

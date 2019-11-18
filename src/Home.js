@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HomeIllustration from "./kingdom-upgrade-account.png";
 import ExternalLink from "./ExternalLink";
 import Footer from "./Footer";
+import { device } from "./device";
 
 const Wrapper = styled.main`
   display: flex;
@@ -13,6 +14,13 @@ const Wrapper = styled.main`
     align-self: center;
     margin-right: 60px;
   }
+  @media ${device.mobile} {
+    flex-direction: column-reverse;
+    align-items: center;
+    & img {
+      width: 100%;
+      margin-right: 0;
+    }
 `;
 const Div = styled.section`
   width: 650px;
@@ -25,6 +33,18 @@ const Div = styled.section`
     letter-spacing: 1px;
     line-height: 1.1;
     margin: 40px 0;
+  }
+  @media ${device.mobile} {
+    width: 100%;
+    text-align: center;
+    align-self: flex-start;
+    & h1 {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+    & a {
+      font-size: 1.2rem;
+    }
   }
 `;
 

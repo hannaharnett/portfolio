@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import ProjectList from "./ProjectList";
 
-const Wrapper = styled.main``;
+const Wrapper = styled.main`
+  width: 100%;
+`;
 
 let projects = [
   {
