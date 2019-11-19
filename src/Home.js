@@ -9,23 +9,22 @@ const Wrapper = styled.main`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  & img {
+  img {
     width: 450px;
     align-self: center;
     margin-right: 60px;
+  }
+  @media ${device.tablet} {
+    img {
+      width: 50%;
+      margin-right: 0;
+    }
   }
   @media ${device.mobile} {
     flex-direction: column-reverse;
     align-items: center;
     & img {
       width: 100%;
-      margin-right: 0;
-    }
-  }
-  @media ${device.tablet} {
-    & img {
-      width: 50%;
-      margin-right: 0;
     }
   }
 `;
@@ -33,7 +32,7 @@ const Div = styled.section`
   width: 650px;
   align-self: center;
   font-size: 1.4rem;
-  & h1 {
+  h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
@@ -41,21 +40,24 @@ const Div = styled.section`
     line-height: 1.1;
     margin: 40px 0;
   }
+  @media ${device.tablet} {
+    h1 {
+      font-size: 3rem;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
   @media ${device.mobile} {
     width: 100%;
     text-align: center;
     align-self: flex-start;
-    & h1 {
+    h1 {
       font-size: 2rem;
       margin: 20px 0;
     }
-    & a {
+    a {
       font-size: 1.2rem;
-    }
-  }
-  @media ${device.tablet} {
-    h1 {
-      font-size: 3rem;
     }
   }
 `;

@@ -6,7 +6,7 @@ const Url = styled.a`
   text-decoration: none;
   color: black;
   margin: 5px 0;
-  &:hover {
+  :hover {
     text-decoration: underline;
   }
 `;

@@ -12,14 +12,12 @@ const Nav = styled.div`
   font-size: 1.5rem;
   color: black;
   background: transparent;
-  & a {
+  a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     letter-spacing: 1px;
     text-decoration: none;
     color: black;
-  }
-  @media ${device.mobile} {
   }
 `;
 
@@ -30,11 +28,11 @@ const Overlay = styled.div`
   left: 0;
   background: white;
   overflow-x: hidden;
-  & div {
+  div {
     margin: 50px 80px;
   }
   @media ${device.mobile} {
-    & div {
+    div {
       margin: 40px 50px;
     }
   }

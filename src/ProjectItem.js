@@ -8,6 +8,9 @@ const Wrapper = styled.main`
   justify-content: space-between;
   margin: 20px 40px 20px 0;
   width: 30%;
+  @media ${device.tablet} {
+    width: 40%;
+  }
   @media ${device.mobile} {
     width: 100%;
   }
@@ -16,7 +19,7 @@ const Wrapper = styled.main`
 const About = styled.section`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   & h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 2.7rem;
@@ -30,11 +33,16 @@ const About = styled.section`
     font-size: 1.4rem;
     margin: 15px 0;
   }
-  @media ${device.mobile} {
-    width: 100%;
+  @media ${device.tablet} {
     h1 {
       font-size: 2rem;
     }
+    a {
+      text-decoration: underline;
+    }
+  }
+  @media ${device.mobile} {
+    width: 100%;
   }
 `;
 

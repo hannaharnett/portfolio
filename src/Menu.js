@@ -11,12 +11,11 @@ const MenuContainer = styled.section`
   height: 60%;
   display: flex;
   align-items: center;
-  & ul {
+  ul {
     list-style: none;
     text-decoration: none;
   }
-  ,
-  & h1 {
+  h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
@@ -28,19 +27,12 @@ const MenuContainer = styled.section`
   h1:hover {
     color: #ee534c;
   }
-  ,
-  & a {
+  a {
     text-decoration: none;
   }
-  ,
-  & span {
+  span {
     font-size: 1.1rem;
     color: black;
-  }
-  @media ${device.mobile} {
-    h1 {
-      font-size: 3rem;
-    }
   }
   @media ${device.tablet} {
     h1 {
