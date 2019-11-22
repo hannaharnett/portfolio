@@ -7,19 +7,13 @@ const Wrapper = styled.main`
   display: flex;
   justify-content: space-between;
   margin: 20px 40px 20px 0;
-  width: 30%;
-  @media ${device.tablet} {
-    width: 40%;
-  }
-  @media ${device.mobile} {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 const About = styled.section`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   & h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 2.7rem;
@@ -33,12 +27,12 @@ const About = styled.section`
     font-size: 1.4rem;
     margin: 15px 0;
   }
+  a {
+    text-decoration: underline;
+  }
   @media ${device.tablet} {
     h1 {
       font-size: 2rem;
-    }
-    a {
-      text-decoration: underline;
     }
   }
   @media ${device.mobile} {

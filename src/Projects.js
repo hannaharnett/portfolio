@@ -8,22 +8,18 @@ const Wrapper = styled.main`
 
 let projects = [
   {
-    name: "Project 1",
-    description: "",
-    website: "www.something.com",
-    code: ""
+    name: "Fylo Landing Page",
+    description:
+      "The project was built through a Frontend Mentor challenge. They provide designs in JPG static format. The project was built without exact measurements, forcing me to use my own judgement for styles.",
+    website: "https://hannaharnett.github.io/fylo-landing-page/",
+    code: "https://github.com/hannaharnett/fylo-landing-page"
   },
   {
-    name: "Project 2",
-    description: "",
-    website: "www.something.com",
-    code: ""
-  },
-  {
-    name: "Project 3",
-    description: "",
-    website: "www.something.com",
-    code: ""
+    name: "Credit Card Form",
+    description:
+      "React Form Validation. The page portrays the information on the credit card as the user inputs it. Invalid information will be stored in error object in state.",
+    website: "https://hannaharnett.github.io/credit-card-form/",
+    code: "https://github.com/hannaharnett/credit-card-form"
   }
 ];
 
