@@ -39,12 +39,11 @@ const Wrapper = styled.div`
 
 class NavIcon extends Component {
   render() {
+    const { isToggleOn, closeNav, openNav } = this.props;
     return (
       <Wrapper
-        isToggleOn={this.props.isToggleOn}
-        onClick={
-          this.props.isToggleOn ? this.props.closeNav : this.props.openNav
-        }
+        isToggleOn={isToggleOn}
+        onClick={isToggleOn ? closeNav : openNav}
       >
         <span />
         <span />

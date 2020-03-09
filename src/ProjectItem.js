@@ -42,13 +42,15 @@ const About = styled.section`
 
 class ProjectItem extends Component {
   render() {
+    const { name, description, website, code } = this.props.project;
+    const noWebsite = !website ? "" : "View Project";
     return (
       <Wrapper>
         <About>
-          <h1>{this.props.project.name}</h1>
-          <p>{this.props.project.description}</p>
-          <ExternalLink link={this.props.project.website} name="View Project" />
-          <ExternalLink link={this.props.project.code} name="View Code" />
+          <h1>{name}</h1>
+          <p>{description}</p>
+          <ExternalLink link={website} name={noWebsite} />
+          <ExternalLink link={code} name="View Code" />
         </About>
       </Wrapper>
     );

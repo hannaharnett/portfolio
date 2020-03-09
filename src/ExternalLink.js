@@ -13,9 +13,10 @@ const Url = styled.a`
 
 class ExternalLink extends Component {
   render() {
+    const { link, name } = this.props;
     return (
-      <Url target="_blank" rel="noopener noreferrer" href={this.props.link}>
-        {this.props.name}
+      <Url target="_blank" rel="noopener noreferrer" href={link}>
+        {name}
       </Url>
     );
   }

@@ -43,23 +43,24 @@ const MenuContainer = styled.section`
 
 class Menu extends Component {
   render() {
+    const { clickMenu } = this.props;
     return (
       <Wrapper>
         <MenuContainer>
           <ul>
-            <li onClick="">
-              <Link to="/files/fakeResume.pdf" target="_blank" download>
+            <li>
+              <Link to="/files/Hannah-Arnett-resume.pdf" target="_blank">
                 <h1>
                   resume<span>PDF</span>
                 </h1>
               </Link>
             </li>
-            <li onClick={this.props.clickMenu}>
+            <li onClick={clickMenu}>
               <Link to="/projects">
                 <h1>projects</h1>
               </Link>
             </li>
-            <li onClick={this.props.clickMenu}>
+            <li onClick={clickMenu}>
               <Link to="/contact">
                 <h1>contact</h1>
               </Link>
