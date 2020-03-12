@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { device } from "./device";
+import pdf from "./assets/Hannah-Arnett-Resume.pdf";
 
 const Wrapper = styled.main`
   height: 100vh;
@@ -23,6 +24,12 @@ const MenuContainer = styled.section`
     letter-spacing: 1px;
     line-height: 1.1;
     max-width: 60%;
+    a {
+      color: #2568ef;
+    }
+    a:hover {
+      color: #ee534c;
+    }
   }
   h1:hover {
     color: #ee534c;
@@ -49,11 +56,12 @@ class Menu extends Component {
         <MenuContainer>
           <ul>
             <li>
-              <Link to="/files/Hannah-Arnett-resume.pdf" target="_blank">
-                <h1>
-                  resume<span>PDF</span>
-                </h1>
-              </Link>
+              <h1>
+                <a target="_blank" rel="noopener noreferrer" href={pdf}>
+                  resume
+                </a>
+                <span>PDF</span>
+              </h1>
             </li>
             <li onClick={clickMenu}>
               <Link to="/projects">
