@@ -1,3 +1,14 @@
+## Portfolio project
+
+hannaharnett.com
+
+###Credit
+
+Hover styles where inspired by a post on CSS-tricks:
+
+[Having fun with link hover effects](https://css-tricks.com/having-fun-with-link-hover-effects/)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
