@@ -4,9 +4,11 @@ hannaharnett.com
 
 ### Credit
 
-Hover styles where inspired by a post on CSS-tricks:
 
-[https://css-tricks.com/having-fun-with-link-hover-effects/](https://css-tricks.com/having-fun-with-link-hover-effects/)
+Illustrations by Ouch.pics
+
+[https://icons8.com/](https://icons8.com/)
+
 
 
 
