@@ -47,7 +47,7 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isToggleOn: "false"
+      isToggleOn: false
     };
     this.openNav = this.openNav.bind(this);
     this.closeNav = this.closeNav.bind(this);
@@ -73,8 +73,8 @@ class Navbar extends Component {
           <h4>
             <Link
               to="/"
-              istoggleon={isToggleOn}
-              onClick={isToggleOn ? this.clickMenu : "false"}
+              istoggleon={isToggleOn.toString()}
+              onClick={isToggleOn ? this.clickMenu : null}
             >
               hannaharnett
             </Link>
