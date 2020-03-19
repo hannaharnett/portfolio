@@ -22,28 +22,28 @@ const Wrapper = styled.div`
     height: 2px;
     transform-origin: 1px;
     :nth-child(1) {
-      transform: ${props => (props.isToggleOn ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${props => (props.istoggleon ? "rotate(45deg)" : "rotate(0)")};
     }
     ,
     :nth-child(2) {
       transform: ${props =>
-        props.isToggleOn ? "translateX(150px)" : "translateX(0)"};
+        props.istoggleon ? "translateX(150px)" : "translateX(0)"};
     }
     ,
     :nth-child(3) {
       transform: ${props =>
-        props.isToggleOn ? "rotate(-45deg)" : "rotate(0)"};
+        props.istoggleon ? "rotate(-45deg)" : "rotate(0)"};
     }
   }
 `;
 
 class NavIcon extends Component {
   render() {
-    const { isToggleOn, closeNav, openNav } = this.props;
+    const { istoggleon, closeNav, openNav } = this.props;
     return (
       <Wrapper
-        isToggleOn={isToggleOn}
-        onClick={isToggleOn ? closeNav : openNav}
+        istoggleon={istoggleon}
+        onClick={istoggleon ? closeNav : openNav}
       >
         <span />
         <span />
