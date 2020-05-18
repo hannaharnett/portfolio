@@ -68,7 +68,7 @@ class Home extends Component {
       <div>
         <Wrapper>
           <Div>
-            <h1>Hullo! I'm Hannah, Portland based web developer.</h1>
+            <h1>Hullo! I'm Hannah, Santa Barbara based web developer.</h1>
             <ExternalLink
               link="https://www.linkedin.com/in/hannah-arnett/"
               name="LinkedIn"
