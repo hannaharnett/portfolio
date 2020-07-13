@@ -9,9 +9,11 @@ const Nav = styled.div`
   display: flex;
   height: 90px;
   justify-content: space-between;
-  font-size: 1.5rem;
   color: black;
   background: transparent;
+  h1 {
+    font-size: 1.5rem;
+  }
   a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -70,24 +72,25 @@ class Navbar extends Component {
     return (
       <div>
         <Nav>
-          <h4>
+          <h1>
             <Link
               to="/"
-              istoggleon={isToggleOn.toString()}
+              istoggleon={isToggleOn}
               onClick={isToggleOn ? this.clickMenu : null}
+              aria-label="Return to homepage"
             >
               hannaharnett
             </Link>
-          </h4>
+          </h1>
           <NavIcon
             istoggleon={isToggleOn}
             openNav={this.openNav}
             closeNav={this.closeNav}
           />
         </Nav>
-        <Overlay ref="snav" style={OverlayStyle}>
+        <Overlay style={OverlayStyle}>
           <div>
-            <Menu clickMenu={this.clickMenu} />
+            <Menu clickMenu={this.clickMenu} isToggleOn={isToggleOn} />
           </div>
         </Overlay>
       </div>

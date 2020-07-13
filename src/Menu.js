@@ -50,26 +50,26 @@ const MenuContainer = styled.section`
 
 class Menu extends Component {
   render() {
-    const { clickMenu } = this.props;
+    const { clickMenu, isToggleOn } = this.props;
     return (
       <Wrapper>
         <MenuContainer>
           <ul>
             <li>
               <h1>
-                <a target="_blank" rel="noopener noreferrer" href={pdf}>
-                  resume
+                <a tabIndex={isToggleOn ? "0" : "-1"} target="_blank" rel="noopener noreferrer" href={pdf}>
+                  resume<span>PDF</span>
                 </a>
-                <span>PDF</span>
+                
               </h1>
             </li>
             <li onClick={clickMenu}>
-              <Link to="/projects">
+              <Link tabIndex={isToggleOn ? "0" : "-1"} to="/projects">
                 <h1>projects</h1>
               </Link>
             </li>
             <li onClick={clickMenu}>
-              <Link to="/contact">
+              <Link tabIndex={isToggleOn ? "0" : "-1"} to="/contact">
                 <h1>contact</h1>
               </Link>
             </li>
