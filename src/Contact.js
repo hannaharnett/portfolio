@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import styled from "styled-components";
 import ContactIllustration from "./kingdom-1.png";
 import ExternalLink from "./ExternalLink";
+import VisuallyHiddenTitle from './VisuallyHiddenTitle';
 import Footer from "./Footer";
 import { device } from "./device";
 
-const Wrapper = styled.main`
+const Wrapper = styled.section`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -68,10 +69,19 @@ const Div = styled.section`
 `;
 
 class Contact extends Component {
+  constructor(props){
+    super(props);
+    this.heading = createRef();
+  }
+  componentDidMount() {
+    this.heading.current.focus();
+    document.title = "Contact"
+  }
   render() {
     return (
-      <div>
-        <Wrapper>
+      <>
+        <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
+          <VisuallyHiddenTitle id="pageTitle" title="Contact"/>
           <Div>
             <h1>Alright, how do you take your coffee?</h1>
             <p>hannahtesaker@gmail.com</p>
@@ -93,7 +103,7 @@ class Contact extends Component {
           <img src={ContactIllustration} alt="illustration" />
         </Wrapper>
         <Footer />
-      </div>
+      </>
     );
   }
 }

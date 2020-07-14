@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import styled from "styled-components";
 import HomeIllustration from "./kingdom-upgrade-account.png";
 import ExternalLink from "./ExternalLink";
+import VisuallyHiddenTitle from './VisuallyHiddenTitle';
 import Footer from "./Footer";
 import { device } from "./device";
 
-const Wrapper = styled.main`
+const Wrapper = styled.section`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -63,10 +64,19 @@ const Div = styled.section`
 `;
 
 class Home extends Component {
+  constructor(props){
+    super(props);
+    this.heading = createRef();
+  }
+  componentDidMount() {
+    this.heading.current.focus();
+    document.title = "Homepage"
+  }
   render() {
     return (
-      <div>
-        <Wrapper>
+      <>
+        <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
+          <VisuallyHiddenTitle id="pageTitle" title="Homepage" />
           <Div>
             <h1>Hullo! I'm Hannah, Santa Barbara based web developer.</h1>
             <ExternalLink
@@ -82,7 +92,7 @@ class Home extends Component {
           <img src={HomeIllustration} alt="illustration" />
         </Wrapper>
         <Footer />
-      </div>
+      </>
     );
   }
 }

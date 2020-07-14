@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import styled from "styled-components";
 import ProjectList from "./ProjectList";
+import VisuallyHiddenTitle from './VisuallyHiddenTitle';
 
-const Wrapper = styled.main`
+const Wrapper = styled.section`
   width: 100%;
 `;
 
@@ -45,9 +46,19 @@ let projects = [
 ];
 
 class Projects extends Component {
+  constructor(props) {
+    super(props);
+    this.heading = createRef();
+  }
+  componentDidMount() {
+    this.heading.current.focus();
+    document.title = "Projects"
+    console.log(document.title, this.heading.current)
+  }
   render() {
     return (
-      <Wrapper>
+      <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
+        <VisuallyHiddenTitle id="pageTitle" title="Projects" />
         <ProjectList projects={projects} />
       </Wrapper>
     );
