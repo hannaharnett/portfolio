@@ -13,8 +13,8 @@ const Title = styled.h1`
   white-space: nowrap;
 `;
 
-function VisuallyHiddenTitle(props) {
-return <Title id={props.id}>{props.title}</Title>
-}
+const VisuallyHiddenTitle = (props) => (
+  <Title id={props.id}>{props.title}</Title>
+);
 
 export default VisuallyHiddenTitle;

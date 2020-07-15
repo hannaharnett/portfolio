@@ -3,23 +3,20 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "./Menu";
 import NavIcon from "./NavIcon";
-import { device } from "./device";
 
-const Nav = styled.div`
+const Nav = styled.nav`
   display: flex;
   height: 90px;
   justify-content: space-between;
   color: black;
   background: transparent;
-  h1 {
-    font-size: 1.5rem;
-  }
   a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     letter-spacing: 1px;
     text-decoration: none;
     color: black;
+    font-size: 1.5rem;
   }
 `;
 
@@ -30,14 +27,6 @@ const Overlay = styled.div`
   left: 0;
   background: white;
   overflow-x: hidden;
-  div {
-    margin: 50px 80px;
-  }
-  @media ${device.mobile} {
-    div {
-      margin: 40px 50px;
-    }
-  }
 `;
 
 let OverlayStyle = {
@@ -70,18 +59,16 @@ class Navbar extends Component {
   render() {
     const { isToggleOn } = this.state;
     return (
-      <div>
+      <header>
         <Nav>
-          <h1>
-            <Link
-              to="/"
-              istoggleon={isToggleOn}
-              onClick={isToggleOn ? this.clickMenu : null}
-              aria-label="Return to homepage"
-            >
-              hannaharnett
-            </Link>
-          </h1>
+          <Link
+            to="/"
+            istoggleon={isToggleOn}
+            onClick={isToggleOn ? this.clickMenu : null}
+            aria-label="Return to homepage"
+          >
+            hannaharnett
+          </Link>
           <NavIcon
             istoggleon={isToggleOn}
             openNav={this.openNav}
@@ -89,11 +76,9 @@ class Navbar extends Component {
           />
         </Nav>
         <Overlay style={OverlayStyle}>
-          <div>
-            <Menu clickMenu={this.clickMenu} isToggleOn={isToggleOn} />
-          </div>
+          <Menu clickMenu={this.clickMenu} isToggleOn={isToggleOn} />
         </Overlay>
-      </div>
+      </header>
     );
   }
 }

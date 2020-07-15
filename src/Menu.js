@@ -4,47 +4,48 @@ import styled from "styled-components";
 import { device } from "./device";
 import pdf from "./assets/HannahArnettCV.pdf";
 
-const Wrapper = styled.main`
+const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
 `;
-const MenuContainer = styled.section`
+
+const MenuContainer = styled.div`
   height: 60%;
   display: flex;
   align-items: center;
+  margin: 50px 80px;
   ul {
     list-style: none;
-    text-decoration: none;
-  }
-  h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #2568ef;
-    letter-spacing: 1px;
-    line-height: 1.1;
-    max-width: 60%;
-    a {
-      color: #2568ef;
-    }
-    a:hover {
-      color: #ee534c;
-    }
-  }
-  h1:hover {
-    color: #ee534c;
-  }
-  a {
     text-decoration: none;
   }
   span {
     font-size: 1.1rem;
     color: black;
   }
+  a {
+    text-decoration: none;
+  }
+  @media ${device.mobile} {
+    margin: 40px 50px;
+  }
+`;
+
+const MenuItem = styled.li`
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  max-width: 60%;
+  a {
+    color: #2568ef;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ee534c;
+  }
   @media ${device.tablet} {
-    h1 {
-      font-size: 3rem;
-    }
+    font-size: 3rem;
   }
 `;
 
@@ -55,24 +56,21 @@ class Menu extends Component {
       <Wrapper>
         <MenuContainer>
           <ul>
-            <li>
-              <h1>
-                <a tabIndex={isToggleOn ? "0" : "-1"} target="_blank" rel="noopener noreferrer" href={pdf}>
-                  resume<span>PDF</span>
-                </a>
-                
-              </h1>
-            </li>
-            <li onClick={clickMenu}>
+            <MenuItem>
+              <a tabIndex={isToggleOn ? "0" : "-1"} target="_blank" rel="noopener noreferrer" href={pdf}>
+                resume<span>PDF</span>
+              </a>
+            </MenuItem>
+            <MenuItem onClick={clickMenu}>
               <Link tabIndex={isToggleOn ? "0" : "-1"} to="/projects">
-                <h1>projects</h1>
+                projects
               </Link>
-            </li>
-            <li onClick={clickMenu}>
+            </MenuItem>
+            <MenuItem onClick={clickMenu}>
               <Link tabIndex={isToggleOn ? "0" : "-1"} to="/contact">
-                <h1>contact</h1>
+                contact
               </Link>
-            </li>
+            </MenuItem>
           </ul>
         </MenuContainer>
       </Wrapper>

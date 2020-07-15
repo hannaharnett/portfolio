@@ -29,11 +29,11 @@ const Wrapper = styled.section`
   }
 `;
 
-const Div = styled.section`
+const Div = styled.div`
   width: 500px;
   align-self: center;
   font-size: 1.4rem;
-  h1 {
+  h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
@@ -49,7 +49,7 @@ const Div = styled.section`
     text-decoration: underline;
   }
   @media ${device.tablet} {
-    h1 {
+    h2 {
       font-size: 3rem;
     }
     a {
@@ -60,7 +60,7 @@ const Div = styled.section`
   @media ${device.mobile} {
     width: 100%;
     text-align: center;
-    & h1 {
+    & h2 {
       font-size: 2rem;
       margin: 20px 0;
     }
@@ -86,7 +86,7 @@ class NotFoundPage extends Component {
           <VisuallyHiddenTitle id="pageTitle" title="There seems to be a problem" />
           <img src={NotFoundPageIllustration} alt=" 404 illustration" />
           <Div>
-            <h1>Hmm, that doesn't look good...</h1>
+            <h2>Hmm, that doesn't look good...</h2>
             <Link to="/">Let's try that again!</Link>
           </Div>
         </Wrapper>

@@ -3,7 +3,7 @@ import ExternalLink from "./ExternalLink";
 import styled from "styled-components";
 import { device } from "./device";
 
-const FooterDiv = styled.div`
+const FooterDiv = styled.footer`
   position: fixed;
   display: flex;
   height: 60px;

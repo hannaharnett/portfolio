@@ -1,10 +1,13 @@
 import React, { Component, createRef } from "react";
 import styled from "styled-components";
-import ProjectList from "./ProjectList";
+import ProjectItem from './ProjectItem';
 import VisuallyHiddenTitle from './VisuallyHiddenTitle';
 
 const Wrapper = styled.section`
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
 `;
 
 let projects = [
@@ -55,11 +58,15 @@ class Projects extends Component {
     document.title = "Projects"
     console.log(document.title, this.heading.current)
   }
-  render() {
+  render() { 
+    const projectList = projects.map(project => {
+      return <ProjectItem project={project} key={project.name} />
+    })
+
     return (
       <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
         <VisuallyHiddenTitle id="pageTitle" title="Projects" />
-        <ProjectList projects={projects} />
+        {projectList}
       </Wrapper>
     );
   }

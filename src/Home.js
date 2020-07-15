@@ -29,11 +29,11 @@ const Wrapper = styled.section`
     }
   }
 `;
-const Div = styled.section`
+const Div = styled.div`
   width: 650px;
   align-self: center;
   font-size: 1.4rem;
-  h1 {
+  h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
@@ -42,7 +42,7 @@ const Div = styled.section`
     margin: 40px 0;
   }
   @media ${device.tablet} {
-    h1 {
+    h2 {
       font-size: 3rem;
     }
     a {
@@ -53,7 +53,7 @@ const Div = styled.section`
     width: 100%;
     text-align: center;
     align-self: flex-start;
-    h1 {
+    h2 {
       font-size: 2rem;
       margin: 20px 0;
     }
@@ -78,7 +78,7 @@ class Home extends Component {
         <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
           <VisuallyHiddenTitle id="pageTitle" title="Homepage" />
           <Div>
-            <h1>Hullo! I'm Hannah, Santa Barbara based web developer.</h1>
+            <h2>Hullo! I'm Hannah, Santa Barbara based web developer.</h2>
             <ExternalLink
               link="https://www.linkedin.com/in/hannah-arnett/"
               name="LinkedIn"

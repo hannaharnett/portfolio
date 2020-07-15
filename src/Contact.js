@@ -30,10 +30,10 @@ const Wrapper = styled.section`
   }
 `;
 
-const Div = styled.section`
+const Div = styled.div`
   width: 500px;
   align-self: center;
-  h1 {
+  h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
@@ -47,7 +47,7 @@ const Div = styled.section`
     margin: 10px 0;
   }
   @media ${device.tablet} {
-    h1 {
+    h2 {
       font-size: 3rem;
     }
     a {
@@ -58,7 +58,7 @@ const Div = styled.section`
   @media ${device.mobile} {
     width: 100%;
     text-align: center;
-    h1 {
+    h2 {
       font-size: 2rem;
       margin: 20px 0;
     }
@@ -83,7 +83,7 @@ class Contact extends Component {
         <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
           <VisuallyHiddenTitle id="pageTitle" title="Contact"/>
           <Div>
-            <h1>Alright, how do you take your coffee?</h1>
+            <h2>Alright, how do you take your coffee?</h2>
             <p>hannahtesaker@gmail.com</p>
             <ExternalLink
               link="https://www.linkedin.com/in/hannah-arnett/"
