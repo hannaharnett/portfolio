@@ -62,7 +62,8 @@ class NavIcon extends Component {
     return (
         <HamburgerButton
           onClick={istoggleon ? closeNav : openNav}
-          aria-label="Main menu"
+          aria-label="Navigation"
+          aria-expanded={istoggleon ? true : false}
         >
           <BurgerContainer 
             tabIndex="-1"
