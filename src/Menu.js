@@ -40,6 +40,8 @@ const MenuItem = styled.li`
   a {
     color: #2568ef;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
   a:hover {
     color: #ee534c;
@@ -57,9 +59,10 @@ class Menu extends Component {
         <MenuContainer>
           <ul>
             <MenuItem>
-              <a tabIndex={isToggleOn ? "0" : "-1"} target="_blank" rel="noopener noreferrer" href={pdf}>
-                resume<span>PDF</span>
+              <a tabIndex={isToggleOn ? "0" : "-1"} target="_blank" rel="noopener noreferrer" href={pdf} aria-describedby="new-window">
+                resume<span>PDF</span><img src="https://img.icons8.com/material-rounded/18/000000/external-link.png" alt="" />
               </a>
+              <span className="visually-hidden" id="new-window">Opens in a new window</span>
             </MenuItem>
             <MenuItem onClick={clickMenu}>
               <Link tabIndex={isToggleOn ? "0" : "-1"} to="/projects">

@@ -74,7 +74,7 @@ class Home extends Component {
               link="https://www.linkedin.com/in/hannah-arnett/"
               name="LinkedIn"
             />
-            {"  //  "}
+            {"  / /  "}
             <ExternalLink
               link="https://github.com/hannaharnett"
               name="Github"
