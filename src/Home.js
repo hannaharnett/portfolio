@@ -1,8 +1,8 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import HomeIllustration from "./kingdom-upgrade-account.png";
 import ExternalLink from "./ExternalLink";
-import VisuallyHiddenTitle from './VisuallyHiddenTitle';
+import PageFocus from './PageFocus';
 import Footer from "./Footer";
 import { device } from "./device";
 
@@ -64,19 +64,10 @@ const Div = styled.div`
 `;
 
 class Home extends Component {
-  constructor(props){
-    super(props);
-    this.heading = createRef();
-  }
-  componentDidMount() {
-    this.heading.current.focus();
-    document.title = "Homepage"
-  }
   render() {
     return (
-      <>
-        <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
-          <VisuallyHiddenTitle id="pageTitle" title="Homepage" />
+      <PageFocus headerText="Homepage">
+        <Wrapper>
           <Div>
             <h2>Hullo! I'm Hannah, Santa Barbara based web developer.</h2>
             <ExternalLink
@@ -92,7 +83,7 @@ class Home extends Component {
           <img src={HomeIllustration} alt="illustration" />
         </Wrapper>
         <Footer />
-      </>
+      </PageFocus>
     );
   }
 }

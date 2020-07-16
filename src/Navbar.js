@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "./Menu";
 import NavIcon from "./NavIcon";
+import PageFocus from "./PageFocus";
 
 const Nav = styled.nav`
   display: flex;
@@ -51,10 +52,12 @@ class Navbar extends Component {
   closeNav() {
     OverlayStyle = { width: 0, transition: "0.8s" };
     this.setState({ isToggleOn: !this.state.isToggleOn });
+    document.title = "Don't be a stranger";
   }
   clickMenu() {
     OverlayStyle = { width: 0, transition: "" };
     this.setState({ isToggleOn: !this.state.isToggleOn });
+    this.closeNav();
   }
   render() {
     const { isToggleOn } = this.state;
@@ -65,19 +68,25 @@ class Navbar extends Component {
             to="/"
             istoggleon={isToggleOn}
             onClick={isToggleOn ? this.clickMenu : null}
-            aria-label="Return to homepage"
+            aria-label="Logo"
+            aria-describedby="return-home-btn"
           >
             hannaharnett
           </Link>
+          <p className="visually-hidden" id="return-home-btn">This link takes you back to the homepage</p>
           <NavIcon
             istoggleon={isToggleOn}
             openNav={this.openNav}
             closeNav={this.closeNav}
           />
         </Nav>
-        <Overlay style={OverlayStyle}>
-          <Menu clickMenu={this.clickMenu} isToggleOn={isToggleOn} />
-        </Overlay>
+        {isToggleOn && 
+          <PageFocus headerText="Expanded Navigation">
+            <Overlay style={OverlayStyle}>
+              <Menu clickMenu={this.clickMenu} isToggleOn={isToggleOn} />
+            </Overlay>
+          </PageFocus>
+        }
       </header>
     );
   }

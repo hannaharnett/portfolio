@@ -1,9 +1,9 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import NotFoundPageIllustration from "./kingdom-8.png";
 import styled from "styled-components";
 import Footer from "./Footer";
-import VisuallyHiddenTitle from './VisuallyHiddenTitle';
+import PageFocus from "./PageFocus";
 import { device } from "./device";
 
 const Wrapper = styled.section`
@@ -71,19 +71,10 @@ const Div = styled.div`
 `;
 
 class NotFoundPage extends Component {
-  constructor(props) {
-    super(props);
-    this.heading = createRef();
-  }
-  componentDidMount() {
-    this.heading.current.focus();
-    document.title = "There seems to be a problem"
-  }
   render() {
     return (
-      <>
-        <Wrapper aria-labelledby="pageTitle" ref={this.heading} tabIndex="-1">
-          <VisuallyHiddenTitle id="pageTitle" title="There seems to be a problem" />
+      <PageFocus headerText="Ai, something went wrong, 404 error page">
+        <Wrapper>
           <img src={NotFoundPageIllustration} alt=" 404 illustration" />
           <Div>
             <h2>Hmm, that doesn't look good...</h2>
@@ -91,7 +82,7 @@ class NotFoundPage extends Component {
           </Div>
         </Wrapper>
         <Footer />
-      </>
+      </PageFocus>
     );
   }
 }
