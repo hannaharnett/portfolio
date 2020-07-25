@@ -15,9 +15,9 @@ class ExternalLink extends Component {
   render() {
     const { link, name } = this.props;
     return (
-      <Url target="_blank" rel="noopener noreferrer" href={link} aria-describedby="ext-link">
+      <Url target="_blank" rel="noopener noreferrer" href={link} aria-describedby={name}>
         {name}
-        <span className="visually-hidden" id="ext-link">Opens an external site in a new window</span>
+        <span className="visually-hidden" id={name}>Opens an external site in a new window</span>
       </Url>
     );
   }
