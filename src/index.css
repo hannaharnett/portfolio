@@ -23,6 +23,10 @@ body {
   white-space: nowrap;
 }
 
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
 @media screen and (max-width: 375px) {
   body {
     margin: 0;

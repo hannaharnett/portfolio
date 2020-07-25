@@ -53,25 +53,34 @@ const MenuItem = styled.li`
 
 class Menu extends Component {
   render() {
-    const { clickMenu, isToggleOn } = this.props;
+    const { clickHandler, isOpen, menuListRef } = this.props;
+    const tabIndex = isOpen ? "0" : "-1";
     return (
       <Wrapper>
         <MenuContainer>
-          <ul>
+          <ul
+            role="list" /*for screen readers in Safari*/
+            ref={menuListRef}
+          >
             <MenuItem>
-              <a tabIndex={isToggleOn ? "0" : "-1"} target="_blank" rel="noopener noreferrer" href={pdf} aria-describedby="new-window">
+              <a tabIndex={tabIndex} target="_blank" rel="noopener noreferrer" href={pdf} aria-describedby="new-window">
                 resume<span>PDF</span><img src="https://img.icons8.com/material-rounded/18/000000/external-link.png" alt="" />
               </a>
               <span className="visually-hidden" id="new-window">Opens in a new window</span>
             </MenuItem>
-            <MenuItem onClick={clickMenu}>
-              <Link tabIndex={isToggleOn ? "0" : "-1"} to="/projects">
+            <MenuItem onClick={clickHandler}>
+              <Link tabIndex={tabIndex} to="/projects">
                 projects
               </Link>
             </MenuItem>
-            <MenuItem onClick={clickMenu}>
-              <Link tabIndex={isToggleOn ? "0" : "-1"} to="/contact">
+            <MenuItem onClick={clickHandler}>
+              <Link tabIndex={tabIndex} to="/contact">
                 contact
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={clickHandler}>
+              <Link tabIndex={tabIndex} >
+                close
               </Link>
             </MenuItem>
           </ul>

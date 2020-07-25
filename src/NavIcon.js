@@ -42,37 +42,37 @@ const Span = styled.span`
     outline: none;
   }
   :nth-child(1) {
-    transform: ${props => (props.istoggleon ? "rotate(45deg)" : "rotate(0)")};
+    transform: ${props => props.isOpen ? "rotate(45deg)" : "rotate(0)"};
   }
   ,
   :nth-child(2) {
     transform: ${props =>
-      props.istoggleon ? "translateX(150px)" : "translateX(0)"};
+    props.isOpen ? "translateX(150px)" : "translateX(0)"};
   }
   ,
   :nth-child(3) {
     transform: ${props =>
-      props.istoggleon ? "rotate(-45deg)" : "rotate(0)"};
+    props.isOpen ? "rotate(-45deg)" : "rotate(0)"};
   }
 `;
 
 class NavIcon extends Component {
   render() {
-    const { istoggleon, closeNav, openNav } = this.props;
+    const { isOpen, toggle } = this.props;
     return (
-        <HamburgerButton
-          onClick={istoggleon ? closeNav : openNav}
-          aria-label="Navigation"
-          aria-expanded={istoggleon ? true : false}
+      <HamburgerButton
+        onClick={toggle}
+        aria-label="Navigation"
+        aria-expanded={isOpen ? true : false}
+      >
+        <BurgerContainer
+          tabIndex="-1"
         >
-          <BurgerContainer 
-            tabIndex="-1"
-          >
-            <Span istoggleon={istoggleon} />
-            <Span istoggleon={istoggleon} />
-            <Span istoggleon={istoggleon} />
-          </BurgerContainer>
-        </HamburgerButton>
+          <Span isOpen={isOpen} />
+          <Span isOpen={isOpen} />
+          <Span isOpen={isOpen} />
+        </BurgerContainer>
+      </HamburgerButton>
     );
   }
 }

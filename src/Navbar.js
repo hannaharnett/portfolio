@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "./Menu";
 import NavIcon from "./NavIcon";
-import PageFocus from "./PageFocus";
+import FocusLock from 'react-focus-lock';
 
 const Nav = styled.nav`
   display: flex;
@@ -30,66 +30,55 @@ const Overlay = styled.div`
   overflow-x: hidden;
 `;
 
-let OverlayStyle = {
-  width: 0,
-  transition: ""
-};
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuListRef = useRef(null);
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isToggleOn: false
-    };
-    this.openNav = this.openNav.bind(this);
-    this.closeNav = this.closeNav.bind(this);
-    this.clickMenu = this.clickMenu.bind(this);
+  const overlayStyle = isOpen ? { width: "100%", transition: "0.8s" } : { width: 0, transition: "0.8s" };
+
+  const clickHandler = (event) => {
+    setIsOpen(!isOpen);
   }
-  openNav() {
-    OverlayStyle = { width: "100%", transition: "0.8s" };
-    this.setState({ isToggleOn: !this.state.isToggleOn });
+
+  const keyHandler = (event) => {
+    if (event.key === 'Escape' && isOpen) {
+      setIsOpen(false);
+    }
   }
-  closeNav() {
-    OverlayStyle = { width: 0, transition: "0.8s" };
-    this.setState({ isToggleOn: !this.state.isToggleOn });
-    document.title = "Don't be a stranger";
-  }
-  clickMenu() {
-    OverlayStyle = { width: 0, transition: "" };
-    this.setState({ isToggleOn: !this.state.isToggleOn });
-    this.closeNav();
-  }
-  render() {
-    const { isToggleOn } = this.state;
-    return (
-      <header>
+
+  useEffect(() => {
+    if (isOpen) {
+      // allows animation to finish before moving focus to first link in menu
+      const focus = setTimeout(() =>
+        menuListRef.current.querySelector('a').focus(), 500
+      );
+      return () => clearTimeout(focus);
+    }
+  }, [isOpen]);
+  return (
+    <header onKeyUp={keyHandler}>
+      <FocusLock disabled={!isOpen}>
         <Nav>
           <Link
             to="/"
-            istoggleon={isToggleOn}
-            onClick={isToggleOn ? this.clickMenu : null}
+            onClick={isOpen ? clickHandler : null}
             aria-label="Logo"
             aria-describedby="return-home-btn"
           >
             hannaharnett
-          </Link>
+            </Link>
           <p className="visually-hidden" id="return-home-btn">This link takes you back to the homepage</p>
           <NavIcon
-            istoggleon={isToggleOn}
-            openNav={this.openNav}
-            closeNav={this.closeNav}
+            isOpen={isOpen}
+            toggle={clickHandler}
           />
         </Nav>
-        {isToggleOn && 
-          <PageFocus headerText="Expanded Navigation">
-            <Overlay style={OverlayStyle}>
-              <Menu clickMenu={this.clickMenu} isToggleOn={isToggleOn} />
-            </Overlay>
-          </PageFocus>
-        }
-      </header>
-    );
-  }
+        <Overlay style={overlayStyle}>
+          <Menu clickHandler={clickHandler} isOpen={isOpen} menuListRef={menuListRef} />
+        </Overlay>
+      </FocusLock>
+    </header>
+  )
 }
 
 export default Navbar;
