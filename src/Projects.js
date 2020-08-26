@@ -15,7 +15,7 @@ let projects = [
     name: "Where in the World?",
     description:
       "A single-page-application integrating REST Countries API. Shows you the countries from the API on the homepage. You can search for a specific country by name or filter by region.",
-    website: "https://hannaharnett.github.io/rest_countries/#/",
+    website: "https://wherein-theworld.netlify.app/#/",
     code: "https://github.com/hannaharnett/rest_countries",
   },
   {
@@ -49,7 +49,7 @@ let projects = [
 ];
 
 class Projects extends Component {
-  render() { 
+  render() {
     const projectList = projects.map(project => {
       return <ProjectItem project={project} key={project.name} />
     })
