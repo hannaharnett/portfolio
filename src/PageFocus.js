@@ -16,7 +16,7 @@ const Title = styled.h1`
 class PageFocus extends Component {
     componentDidMount() {
         // let's initial focus on homepage be first tabbable element
-        if(this.props.headerText !== "Homepage") {
+        if(this.props.headerText !== "Hannah Arnett | Portfolio | Web Developer") {
             this.header.focus();
         }
         document.title = this.props.headerText;

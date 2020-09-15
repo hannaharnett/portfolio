@@ -66,7 +66,7 @@ const Div = styled.div`
 class Home extends Component {
   render() {
     return (
-      <PageFocus headerText="Homepage">
+      <PageFocus headerText="Hannah Arnett | Portfolio | Web Developer">
         <Wrapper>
           <Div>
             <h2>Hullo! I'm Hannah, Santa Barbara based web developer.</h2>

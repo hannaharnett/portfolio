@@ -41,7 +41,6 @@ const Div = styled.div`
     line-height: 1.1;
     margin: 40px 0;
   }
-  ,
   p {
     font-size: 1.4rem;
     margin: 10px 0;
@@ -71,7 +70,7 @@ const Div = styled.div`
 class Contact extends Component {
   render() {
     return (
-      <PageFocus headerText="Contact page">
+      <PageFocus headerText="Hannah Arnett | Contact">
         <Wrapper>
           <Div>
             <h2>Alright, how do you take your coffee?</h2>

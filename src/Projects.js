@@ -55,7 +55,7 @@ class Projects extends Component {
     })
 
     return (
-      <PageFocus headerText="Projects page">
+      <PageFocus headerText="Hannah Arnett | Projects">
         <Wrapper>
           {projectList}
         </Wrapper>
