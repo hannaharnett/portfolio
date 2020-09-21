@@ -26,6 +26,13 @@ let projects = [
     code: "https://github.com/hannaharnett/credit-card-form",
   },
   {
+    name: "Vocab",
+    description:
+      "A React Flashcard app with masonry layout achieved through css grid.",
+    website: "https://fervent-mcclintock-90012a.netlify.app/",
+    code: "https://github.com/hannaharnett/vocab",
+  },
+  {
     name: "Colorful",
     description:
       "Colorful is a CRUD single-page-application built with React where you can create and update color palettes.",
@@ -33,18 +40,18 @@ let projects = [
     code: "https://github.com/hannaharnett/coloful",
   },
   {
-    name: "Tip Calculator",
-    description:
-      "Let's you easily calculate the tip amount by percentage and shows you the amount per person if spliting the bill with one or more people.",
-    website: "https://hannaharnett.github.io/tip-calculator/",
-    code: "https://github.com/hannaharnett/tip-calculator",
-  },
-  {
     name: "Fylo Landing Page",
     description:
       "The project was built through a Frontend Mentor challenge. They provide designs in JPG static format. The project was built without exact measurements, forcing me to use my own judgement for styles.",
     website: "https://hannaharnett.github.io/fylo-landing-page/",
     code: "https://github.com/hannaharnett/fylo-landing-page",
+  },
+  {
+    name: "Tip Calculator",
+    description:
+      "Let's you easily calculate the tip amount by percentage and shows you the amount per person if spliting the bill with one or more people.",
+    website: "https://hannaharnett.github.io/tip-calculator/",
+    code: "https://github.com/hannaharnett/tip-calculator",
   },
 ];
 
