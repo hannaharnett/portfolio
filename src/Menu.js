@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { device } from "./device";
-import pdf from "./assets/HannahArnettCV.pdf";
+import pdf from "./assets/Hannah-Arnett-Resume.pdf";
 
 const Wrapper = styled.div`
   height: 100vh;
