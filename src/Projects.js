@@ -19,25 +19,18 @@ let projects = [
     code: "https://github.com/hannaharnett/rest_countries",
   },
   {
+    name: "Colorful",
+    description:
+      "Colorful is a CRUD single-page-application built with React where you can create and update color palettes.",
+    website: "https://colorful-app.herokuapp.com/",
+    code: "https://github.com/hannaharnett/coloful",
+  },
+  {
     name: "Credit Card Form",
     description:
       "React Form Validation. The page portrays the information on the credit card as the user inputs it. Invalid information will be stored in error object in state.",
     website: "https://hannaharnett.github.io/credit-card-form/",
     code: "https://github.com/hannaharnett/credit-card-form",
-  },
-  {
-    name: "Vocab",
-    description:
-      "A React Flashcard app with masonry layout achieved through css grid.",
-    website: "https://fervent-mcclintock-90012a.netlify.app/",
-    code: "https://github.com/hannaharnett/vocab",
-  },
-  {
-    name: "Colorful",
-    description:
-      "Colorful is a CRUD single-page-application built with React where you can create and update color palettes.",
-    website: "",
-    code: "https://github.com/hannaharnett/coloful",
   },
   {
     name: "Fylo Landing Page",
@@ -47,11 +40,11 @@ let projects = [
     code: "https://github.com/hannaharnett/fylo-landing-page",
   },
   {
-    name: "Tip Calculator",
+    name: "Vocab",
     description:
-      "Let's you easily calculate the tip amount by percentage and shows you the amount per person if spliting the bill with one or more people.",
-    website: "https://hannaharnett.github.io/tip-calculator/",
-    code: "https://github.com/hannaharnett/tip-calculator",
+      "A React Flashcard app with masonry layout achieved through css grid.",
+    website: "https://fervent-mcclintock-90012a.netlify.app/",
+    code: "https://github.com/hannaharnett/vocab",
   },
 ];
 
