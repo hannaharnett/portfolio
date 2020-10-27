@@ -44,7 +44,7 @@ const MenuItem = styled.li`
     align-items: center;
   }
   a:hover {
-    color: #ee534c;
+    color: #e62711;
   }
   @media ${device.tablet} {
     font-size: 3rem;
@@ -64,7 +64,7 @@ class Menu extends Component {
           >
             <MenuItem>
               <a tabIndex={tabIndex} target="_blank" rel="noopener noreferrer" href={pdf} aria-describedby="new-window">
-                resume<span>PDF</span><img src="https://img.icons8.com/material-rounded/18/000000/external-link.png" alt="" />
+                resume<span>PDF</span><img src="https://img.icons8.com/material-rounded/18/000000/external-link.png" alt="opens in new window icon" />
               </a>
               <span className="visually-hidden" id="new-window">Opens in a new window</span>
             </MenuItem>

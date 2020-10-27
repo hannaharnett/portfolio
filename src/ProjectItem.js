@@ -20,9 +20,8 @@ const About = styled.div`
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 1.1;
-    color: #ee534c;
+    color: #e62711;
   }
-  ,
   & p {
     font-size: 1.4rem;
     margin: 15px 0;
